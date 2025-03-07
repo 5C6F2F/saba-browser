@@ -1,0 +1,26 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "rust-analyzer.checkOnSave": true,
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "lldb",
+        "request": "launch",
+        "name": "Rust Debug Launch",
+        "program": "${workspaceRoot}/target/debug/${workspaceRootFolderName}",
+        "args": [],
+        "cwd": "${workspaceRoot}/target/debug/",
+        "sourceLanguages": [
+          "rust"
+        ]
+      }
+    ]
+  }
+}
