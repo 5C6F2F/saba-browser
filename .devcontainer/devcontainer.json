@@ -1,0 +1,23 @@
+{
+  "name": "SaBA",
+  "dockerComposeFile": "./docker-compose.yml",
+  "service": "saba",
+  "workspaceFolder": "/saba",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "leodevbro.blockman",
+        "streetsidesoftware.code-spell-checker",
+        "usernamehw.errorlens",
+        "tamasfe.even-better-toml",
+        "MS-CEINTL.vscode-language-pack-ja",
+        "PKief.material-icon-theme",
+        "shardulm94.trailing-spaces",
+        "vscodevim.vim",
+        "rust-lang.rust-analyzer@0.3.2291",
+        "vadimcn.vscode-lldb",
+        "tal7aouy.indent-colorizer"
+      ]
+    }
+  }
+}
