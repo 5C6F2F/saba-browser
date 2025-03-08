@@ -8,7 +8,7 @@
 ## おまけ
 rust-analyzerがエラーを出すので、以下の手順を行った。
 
-+ バージョン0.3.2291のrust-analyzerをインストール。
++ `.devcontainer/devcontainer.json`でrust-analyzerのバージョンを0.3.2291に指定。
 + `Cargo.lock`の3行目を編集。
 
 ```diff
