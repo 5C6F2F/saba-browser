@@ -157,7 +157,7 @@ impl HtmlParser {
                             attributes,
                         } => {
                             if tag == "body" {
-                                self.insert_element(&tag, attributes.clone());
+                                self.insert_element(tag, attributes.clone());
                                 self.mode = InsertionMode::InBody;
                                 token = self.tokenizer.next();
                                 continue;
@@ -188,17 +188,17 @@ impl HtmlParser {
                             attributes,
                         } => match tag.as_str() {
                             "p" => {
-                                self.insert_element(&tag, attributes.clone());
+                                self.insert_element(tag, attributes.clone());
                                 token = self.tokenizer.next();
                                 continue;
                             }
                             "h1" | "h2" | "h3" => {
-                                self.insert_element(&tag, attributes.clone());
+                                self.insert_element(tag, attributes.clone());
                                 token = self.tokenizer.next();
                                 continue;
                             }
                             "a" => {
-                                self.insert_element(&tag, attributes.clone());
+                                self.insert_element(tag, attributes.clone());
                                 token = self.tokenizer.next();
                             }
                             _ => {
@@ -229,21 +229,21 @@ impl HtmlParser {
                                     continue;
                                 }
                                 "p" => {
-                                    let element_kind = ElementKind::from_str(&tag)
+                                    let element_kind = ElementKind::from_str(tag)
                                         .expect("failed to convert string to ElementKind");
                                     self.pop_until(element_kind);
                                     token = self.tokenizer.next();
                                     continue;
                                 }
                                 "h1" | "h2" | "h3" => {
-                                    let element_kind = ElementKind::from_str(&tag)
+                                    let element_kind = ElementKind::from_str(tag)
                                         .expect("failed to convert string to ElementKind");
                                     self.pop_until(element_kind);
                                     token = self.tokenizer.next();
                                     continue;
                                 }
                                 "a" => {
-                                    let element_kind = ElementKind::from_str(&tag)
+                                    let element_kind = ElementKind::from_str(tag)
                                         .expect("failed to convert string to ElementKind");
                                     self.pop_until(element_kind);
                                     token = self.tokenizer.next();
@@ -491,7 +491,7 @@ impl HtmlParser {
             .set_last_child(Rc::downgrade(&new_child));
         new_child
             .borrow_mut()
-            .set_parent(Rc::downgrade(&current_node));
+            .set_parent(Rc::downgrade(current_node));
 
         self.stack_of_open_elements.push(new_child);
     }

@@ -144,6 +144,12 @@ impl Window {
     }
 }
 
+impl Default for Window {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 #[derive(Clone, Debug)]
 pub struct Element {
     kind: ElementKind,

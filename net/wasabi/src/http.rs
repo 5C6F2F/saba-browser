@@ -6,6 +6,7 @@ use alloc::{
 use noli::net::{lookup_host, IpV4Addr, SocketAddr, TcpStream};
 use saba_core::{error::Error, http::HttpResponse};
 
+#[derive(Default)]
 pub struct HttpClient {}
 
 impl HttpClient {
@@ -78,7 +79,7 @@ impl HttpClient {
             }
         };
 
-        if let Some(&ip_address) = ip_addresses.get(0) {
+        if let Some(&ip_address) = ip_addresses.first() {
             Ok(ip_address)
         } else {
             Err(Error::Network("Failed to find IP addresses".to_string()))

@@ -99,7 +99,7 @@ impl Url {
             return String::new();
         }
 
-        let path_and_params: Vec<&str> = url_parts[1].splitn(2, "?").collect();
+        let path_and_params: Vec<&str> = url_parts[1].splitn(2, '?').collect();
         path_and_params[0].to_string()
     }
 
@@ -110,7 +110,7 @@ impl Url {
             return String::new();
         }
 
-        let path_and_params: Vec<&str> = url_parts[1].splitn(2, "?").collect();
+        let path_and_params: Vec<&str> = url_parts[1].splitn(2, '?').collect();
         if path_and_params.len() < 2 {
             String::new()
         } else {
@@ -122,7 +122,7 @@ impl Url {
     fn trim_url(&self) -> Vec<&str> {
         self.url
             .trim_start_matches(Self::HTTP_SCHEME)
-            .splitn(2, "/")
+            .splitn(2, '/')
             .collect()
     }
 }
